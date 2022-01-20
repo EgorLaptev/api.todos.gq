@@ -17,7 +17,7 @@ class UserShowRequest extends FormRequest
     public function authorize()
     {
         $user = User::where('api_token', $this->bearerToken())->first();
-        return ($user && $user['id'] == $this->all('id') ); // Admin or owner
+        return ($user && $user['id'] == $this->all('id') ); // owner
     }
 
     /**
